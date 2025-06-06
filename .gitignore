@@ -23,6 +23,8 @@ __pycache__/
 *.py[cod]
 env/
 venv/
+
+# База данных
 /singular.db
 
 # Java
@@ -52,3 +54,5 @@ target/
 # Windows
 ehthumbs.db
 desktop.ini
+
+
