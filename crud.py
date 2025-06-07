@@ -1,5 +1,6 @@
 from sqlalchemy.orm import selectinload
 from sqlalchemy.orm import Session
+from sqlalchemy.util import await_only
 
 from models import Base, User, Passport
 from engine import engine
@@ -11,7 +12,7 @@ Base.metadata.create_all(engine)
 # Добавление пользователя с паспортом
 def get_user():
     with Session(engine) as session:
-        user = User(name='', city='', age=)
+        user = User(name='', city='', age=1)
         user.passport = Passport(number=1555555)
         session.add(user)
         session.commit()
