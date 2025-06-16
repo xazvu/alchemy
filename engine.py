@@ -1,4 +1,9 @@
 from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker
 
 #SQlite
-engine = create_engine('sqlite:///singular.db', echo=True, future=True)
+DATABASE_URL = "sqlite:///./susano.db"  # или другой URL
+
+engine = create_engine(DATABASE_URL, connect_args={"check_same_thread": False})
+SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
+
